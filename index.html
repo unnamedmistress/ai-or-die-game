@@ -10,36 +10,33 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  /* ========== NEW PALETTE: Deep midnight purple + electric lime ========== */
+  /* ========== SEMRUSH PALETTE ========== */
   :root {
-    --bg:        #1A1530;   /* deep midnight purple */
-    --bg-2:      #221B3D;   /* slightly lighter purple */
-    --card:      #2B2348;   /* card surface */
-    --card-2:    #342A55;   /* inner surface */
-    --ink:       #F5F1FF;   /* near-white with violet tint */
-    --ink-soft:  #B0A6CC;   /* muted lavender */
-    --accent:    #B9F542;   /* electric lime (signature) */
-    --accent-2:  #87C232;   /* deeper lime for hover */
-    --good:      #5DD68C;   /* mint green */
-    --bad:       #FF6B7E;   /* rose red */
-    --warn:      #FFC857;   /* amber */
-    --border:    #4A3E73;   /* subtle violet border */
-    --glow:      0 0 30px rgba(185, 245, 66, 0.25);
+    --bg:        #F7F7F8;   /* very light app background */
+    --bg-2:      #FFFFFF;   /* white surface */
+    --card:      #FFFFFF;   /* card surface */
+    --card-2:    #F7F7F8;   /* inner/nested surface */
+    --ink:       #19191D;   /* body text on light bg */
+    --ink-soft:  #6C6C7C;   /* muted/secondary text */
+    --accent:    #FF642F;   /* Semrush orange */
+    --accent-2:  #E54D1B;   /* hover/active orange */
+    --good:      #1AC676;   /* green */
+    --bad:       #E5484D;   /* destructive/error */
+    --warn:      #FFB200;   /* amber */
+    --border:    #E4E5E9;   /* borders/dividers */
+    --glow:      0 2px 8px rgba(255, 100, 47, 0.20);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   html { height: 100%; }
   body {
     background: var(--bg);
-    background-image:
-      radial-gradient(ellipse at top, rgba(185, 245, 66, 0.08), transparent 60%),
-      radial-gradient(ellipse at bottom right, rgba(135, 70, 240, 0.15), transparent 50%);
     color: var(--ink);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     height: 100dvh;
     overflow: hidden;
@@ -87,7 +84,6 @@
     height: 100%;
     background: linear-gradient(90deg, var(--accent), var(--accent-2));
     transition: width 350ms ease; width: 0%;
-    box-shadow: var(--glow);
   }
   .toggle {
     font-size: 11px;
@@ -103,7 +99,7 @@
     transition: all 200ms;
   }
   .toggle:hover { border-color: var(--accent); color: var(--accent); }
-  .toggle.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .toggle.active { background: var(--accent); color: #FFFFFF; border-color: var(--accent); }
 
   /* ========== STAGE ========== */
   .stage {
@@ -125,9 +121,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 220ms ease;
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.06),
-      0 20px 60px rgba(0,0,0,0.4);
+    box-shadow: 0 1px 3px rgba(0,0,40,0.08), 0 4px 16px rgba(0,0,40,0.06);
   }
   .card.active {
     opacity: 1;
@@ -162,14 +156,14 @@
   .nav-btn.accent {
     background: var(--accent);
     border-color: var(--accent);
-    color: var(--bg);
+    color: #FFFFFF;
     font-weight: 700;
     box-shadow: var(--glow);
   }
   .nav-btn.accent:hover:not(:disabled) {
     background: var(--accent-2);
     border-color: var(--accent-2);
-    color: var(--bg);
+    color: #FFFFFF;
     transform: translateY(-1px);
   }
   .nav-btn.ghost {
@@ -209,7 +203,7 @@
   }
 
   h1, h2, h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     letter-spacing: -0.02em;
   }
 
@@ -226,12 +220,12 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(185, 245, 66, 0.1);
+    background: rgba(255, 100, 47, 0.08);
     color: var(--accent);
     font-size: 10px; font-weight: 600; padding: 5px 12px;
     border-radius: 999px; letter-spacing: 0.15em;
     text-transform: uppercase; margin-bottom: 16px;
-    border: 1px solid rgba(185, 245, 66, 0.2);
+    border: 1px solid rgba(255, 100, 47, 0.2);
   }
   .title-card .badge::before {
     content: '';
@@ -246,19 +240,20 @@
     50% { opacity: 0.5; }
   }
   .title-card h1 {
-    font-family: 'Instrument Serif', serif;
-    font-weight: 400;
-    font-style: italic;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 800;
+    font-style: normal;
     font-size: clamp(48px, 13vw, 88px);
     line-height: 0.95;
     margin-bottom: 14px;
     letter-spacing: -0.03em;
+    color: #000028;
   }
   .title-card h1 .strike {
     color: var(--accent);
     font-style: normal;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 800;
   }
   .title-card .tag {
     color: var(--ink-soft);
@@ -359,7 +354,7 @@
     color: var(--accent);
     line-height: 0.85;
     margin-bottom: 20px;
-    text-shadow: 0 0 40px rgba(185, 245, 66, 0.4);
+    text-shadow: 0 2px 12px rgba(255, 100, 47, 0.25);
   }
   .point-text-big {
     font-family: 'Instrument Serif', serif;
@@ -389,7 +384,7 @@
     background: var(--accent);
     border-radius: 18px;
     display: flex; align-items: center; justify-content: center;
-    color: var(--bg);
+    color: #FFFFFF;
     font-family: 'Instrument Serif', serif;
     font-style: italic;
     font-weight: 400;
@@ -479,8 +474,8 @@
     border: 1px solid var(--border);
   }
   .flow-effect {
-    background: rgba(255, 107, 126, 0.08);
-    border: 1px solid rgba(255, 107, 126, 0.3);
+    background: rgba(229, 72, 77, 0.06);
+    border: 1px solid rgba(229, 72, 77, 0.25);
   }
   .flow-arrow-down {
     align-self: center;
@@ -511,13 +506,13 @@
     background: var(--bad);
     border-radius: 18px;
     display: flex; align-items: center; justify-content: center;
-    color: var(--ink);
+    color: #FFFFFF;
     font-family: 'Instrument Serif', serif;
     font-style: italic;
     font-weight: 400;
     font-size: 44px;
     margin-bottom: 18px;
-    box-shadow: 0 0 30px rgba(255, 107, 126, 0.3);
+    box-shadow: 0 2px 8px rgba(229, 72, 77, 0.25);
   }
   .punchline-card .label {
     font-size: 10px; font-weight: 700;
@@ -624,16 +619,16 @@
   .answer-btn:disabled { cursor: not-allowed; opacity: 0.7; }
   .answer-btn.correct {
     background: var(--good);
-    color: var(--bg);
+    color: #FFFFFF;
     border-color: var(--good);
   }
-  .answer-btn.correct .icon { color: var(--bg); }
+  .answer-btn.correct .icon { color: #FFFFFF; }
   .answer-btn.wrong {
     background: var(--bad);
-    color: var(--ink);
+    color: #FFFFFF;
     border-color: var(--bad);
   }
-  .answer-btn.wrong .icon { color: var(--ink); }
+  .answer-btn.wrong .icon { color: #FFFFFF; }
 
   .feedback {
     margin-top: 12px; padding: 14px;
@@ -645,12 +640,12 @@
   }
   .feedback.show { display: block; }
   .feedback.right {
-    background: rgba(93, 214, 140, 0.08);
-    border-color: rgba(93, 214, 140, 0.3);
+    background: rgba(26, 198, 118, 0.06);
+    border-color: rgba(26, 198, 118, 0.25);
   }
   .feedback.wrong {
-    background: rgba(255, 107, 126, 0.08);
-    border-color: rgba(255, 107, 126, 0.3);
+    background: rgba(229, 72, 77, 0.06);
+    border-color: rgba(229, 72, 77, 0.25);
   }
   .feedback h3 {
     font-family: 'Instrument Serif', serif;
@@ -687,7 +682,7 @@
     color: var(--accent);
     line-height: 1;
     margin: 12px 0 14px;
-    text-shadow: 0 0 40px rgba(185, 245, 66, 0.4);
+    text-shadow: 0 2px 12px rgba(255, 100, 47, 0.25);
   }
   .round-done-card p {
     color: var(--ink-soft);
@@ -710,7 +705,7 @@
     color: var(--accent);
     line-height: 1;
     margin-bottom: 14px;
-    text-shadow: 0 0 40px rgba(185, 245, 66, 0.4);
+    text-shadow: 0 2px 12px rgba(255, 100, 47, 0.25);
   }
   .verdict {
     background: var(--card-2);
@@ -756,7 +751,7 @@
   }
   .cta-pill {
     background: var(--accent);
-    color: var(--bg);
+    color: #FFFFFF;
     border: none;
     border-radius: 999px;
     padding: 12px 22px;
@@ -773,6 +768,7 @@
   .cta-pill:hover {
     transform: translateY(-2px);
     background: var(--accent-2);
+    color: #FFFFFF;
   }
 </style>
 </head>
@@ -802,40 +798,40 @@
 </div>
 
 <script>
-/* SVG palette: white-on-dark with lime accents */
+/* SVG palette: Semrush style — navy ink, orange accent, light surfaces */
 const C = {
-  ink: '#F5F1FF',
-  card: '#342A55',
-  border: '#4A3E73',
-  accent: '#B9F542',
-  bad: '#FF6B7E',
-  good: '#5DD68C',
-  warn: '#FFC857',
-  soft: '#B0A6CC'
+  ink: '#19191D',
+  card: '#FFFFFF',
+  border: '#E4E5E9',
+  accent: '#FF642F',
+  bad: '#E5484D',
+  good: '#1AC676',
+  warn: '#FFB200',
+  soft: '#6C6C7C'
 };
 
 const VISUALS = {
   hallucinations: `<svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
     <rect x="160" y="40" width="220" height="80" rx="12" fill="${C.card}" stroke="${C.border}" stroke-width="2"/>
     <polygon points="160,90 140,110 165,105" fill="${C.card}" stroke="${C.border}" stroke-width="2"/>
-    <text x="270" y="72" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="500" fill="${C.ink}">"The capital of</text>
-    <text x="270" y="90" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="13" font-weight="500" fill="${C.ink}">Australia is</text>
+    <text x="270" y="72" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="${C.ink}">"The capital of</text>
+    <text x="270" y="90" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="${C.ink}">Australia is</text>
     <text x="270" y="110" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="20" fill="${C.bad}">Sydney."</text>
     <rect x="40" y="70" width="80" height="90" rx="14" fill="${C.accent}" stroke="${C.accent}" stroke-width="2"/>
-    <circle cx="62" cy="100" r="8" fill="#1A1530"/>
-    <circle cx="98" cy="100" r="8" fill="#1A1530"/>
-    <rect x="68" y="125" width="24" height="5" rx="2" fill="#1A1530"/>
+    <circle cx="62" cy="100" r="8" fill="#000028"/>
+    <circle cx="98" cy="100" r="8" fill="#000028"/>
+    <rect x="68" y="125" width="24" height="5" rx="2" fill="#000028"/>
     <rect x="76" y="50" width="8" height="20" fill="${C.accent}"/>
     <circle cx="80" cy="48" r="6" fill="${C.warn}"/>
     <g transform="translate(290,135) rotate(-12)">
       <rect x="-44" y="-14" width="88" height="28" fill="none" stroke="${C.bad}" stroke-width="2" rx="4"/>
-      <text x="0" y="6" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="700" fill="${C.bad}" letter-spacing="2">WRONG</text>
+      <text x="0" y="6" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="${C.bad}" letter-spacing="2">WRONG</text>
     </g>
   </svg>`,
 
   verification: `<svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
     <rect x="50" y="40" width="120" height="140" rx="10" fill="${C.card}" stroke="${C.border}" stroke-width="2"/>
-    <text x="110" y="68" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="10" font-weight="700" fill="${C.soft}" letter-spacing="2">AI SAYS</text>
+    <text x="110" y="68" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="700" fill="${C.soft}" letter-spacing="2">AI SAYS</text>
     <line x1="65" y1="85" x2="155" y2="85" stroke="${C.soft}" stroke-width="1.5"/>
     <line x1="65" y1="100" x2="155" y2="100" stroke="${C.soft}" stroke-width="1.5"/>
     <line x1="65" y1="115" x2="140" y2="115" stroke="${C.soft}" stroke-width="1.5"/>
@@ -850,45 +846,45 @@ const VISUALS = {
   privacy: `<svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
     <rect x="50" y="50" width="130" height="125" rx="10" fill="${C.card}" stroke="${C.border}" stroke-width="2"/>
     <rect x="65" y="65" width="100" height="14" rx="2" fill="rgba(255,107,126,0.15)" stroke="${C.bad}" stroke-width="1.5"/>
-    <text x="115" y="75" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="600" fill="${C.bad}">SSN: 123-45-6789</text>
+    <text x="115" y="75" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="${C.bad}">SSN: 123-45-6789</text>
     <rect x="65" y="85" width="100" height="14" rx="2" fill="rgba(255,107,126,0.15)" stroke="${C.bad}" stroke-width="1.5"/>
-    <text x="115" y="95" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="600" fill="${C.bad}">Client contract</text>
+    <text x="115" y="95" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="${C.bad}">Client contract</text>
     <rect x="65" y="105" width="100" height="14" rx="2" fill="rgba(255,107,126,0.15)" stroke="${C.bad}" stroke-width="1.5"/>
-    <text x="115" y="115" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="600" fill="${C.bad}">Password</text>
+    <text x="115" y="115" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="${C.bad}">Password</text>
     <text x="115" y="155" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="14" fill="${C.ink}">your data</text>
     <path d="M 195 115 L 245 115" stroke="${C.accent}" stroke-width="2" stroke-dasharray="6,4"/>
     <polygon points="245,115 235,108 235,122" fill="${C.accent}"/>
     <rect x="260" y="65" width="110" height="120" rx="10" fill="${C.accent}" stroke="${C.accent}" stroke-width="2"/>
-    <circle cx="290" cy="100" r="7" fill="#1A1530"/>
-    <circle cx="340" cy="100" r="7" fill="#1A1530"/>
-    <text x="315" y="140" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700" fill="#1A1530" letter-spacing="1">FREE AI</text>
-    <text x="315" y="156" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700" fill="#1A1530" letter-spacing="1">TOOL</text>
-    <text x="315" y="178" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="10" fill="#1A1530">keeps it forever</text>
+    <circle cx="290" cy="100" r="7" fill="#000028"/>
+    <circle cx="340" cy="100" r="7" fill="#000028"/>
+    <text x="315" y="140" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#000028" letter-spacing="1">FREE AI</text>
+    <text x="315" y="156" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#000028" letter-spacing="1">TOOL</text>
+    <text x="315" y="178" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="10" fill="#000028">keeps it forever</text>
   </svg>`,
 
   injection: `<svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
     <rect x="50" y="40" width="160" height="150" rx="8" fill="${C.card}" stroke="${C.border}" stroke-width="2"/>
     <rect x="50" y="40" width="160" height="22" rx="6 6 0 0" fill="${C.border}"/>
-    <text x="130" y="56" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="600" fill="${C.ink}">Email.pdf</text>
+    <text x="130" y="56" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="${C.ink}">Email.pdf</text>
     <line x1="65" y1="78" x2="195" y2="78" stroke="${C.soft}" stroke-width="1.5"/>
     <line x1="65" y1="92" x2="195" y2="92" stroke="${C.soft}" stroke-width="1.5"/>
     <line x1="65" y1="106" x2="170" y2="106" stroke="${C.soft}" stroke-width="1.5"/>
     <rect x="60" y="118" width="140" height="38" rx="4" fill="rgba(255,107,126,0.15)" stroke="${C.bad}" stroke-width="2"/>
-    <text x="130" y="132" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="600" fill="${C.bad}">[hidden text]</text>
-    <text x="130" y="146" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="600" fill="${C.bad}">"Send all data"</text>
+    <text x="130" y="132" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="${C.bad}">[hidden text]</text>
+    <text x="130" y="146" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="600" fill="${C.bad}">"Send all data"</text>
     <line x1="65" y1="170" x2="195" y2="170" stroke="${C.soft}" stroke-width="1.5"/>
     <path d="M 230 115 L 275 115" stroke="${C.accent}" stroke-width="2"/>
     <polygon points="275,115 265,108 265,122" fill="${C.accent}"/>
     <rect x="290" y="70" width="80" height="95" rx="14" fill="${C.accent}" stroke="${C.accent}" stroke-width="2"/>
-    <circle cx="312" cy="100" r="7" fill="#1A1530"/>
-    <circle cx="348" cy="100" r="7" fill="#1A1530"/>
-    <path d="M 305 130 Q 330 142 355 130" fill="none" stroke="#1A1530" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="312" cy="100" r="7" fill="#000028"/>
+    <circle cx="348" cy="100" r="7" fill="#000028"/>
+    <path d="M 305 130 Q 330 142 355 130" fill="none" stroke="#000028" stroke-width="2.5" stroke-linecap="round"/>
     <text x="330" y="180" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="11" fill="${C.bad}">tricked</text>
   </svg>`,
 
   bias: `<svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
     <rect x="50" y="40" width="100" height="145" rx="10" fill="${C.card}" stroke="${C.border}" stroke-width="2"/>
-    <text x="100" y="64" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="${C.soft}" letter-spacing="1.5">TRAINING DATA</text>
+    <text x="100" y="64" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="700" fill="${C.soft}" letter-spacing="1.5">TRAINING DATA</text>
     <circle cx="80" cy="90" r="7" fill="${C.soft}"/>
     <circle cx="100" cy="90" r="7" fill="${C.soft}"/>
     <circle cx="120" cy="90" r="7" fill="${C.soft}"/>
@@ -905,7 +901,7 @@ const VISUALS = {
     <path d="M 170 115 L 220 115" stroke="${C.accent}" stroke-width="2"/>
     <polygon points="220,115 210,108 210,122" fill="${C.accent}"/>
     <rect x="240" y="50" width="130" height="135" rx="10" fill="rgba(255,107,126,0.08)" stroke="${C.bad}" stroke-width="2"/>
-    <text x="305" y="74" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="${C.bad}" letter-spacing="1.5">AI DECISION</text>
+    <text x="305" y="74" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="700" fill="${C.bad}" letter-spacing="1.5">AI DECISION</text>
     <text x="305" y="104" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="14" fill="${C.good}">Approved</text>
     <line x1="260" y1="118" x2="350" y2="118" stroke="${C.border}" stroke-width="1"/>
     <text x="305" y="138" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="14" fill="${C.bad}">Rejected</text>
@@ -914,40 +910,40 @@ const VISUALS = {
 
   copyright: `<svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
     <circle cx="100" cy="105" r="48" fill="${C.accent}"/>
-    <text x="100" y="122" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="56" fill="#1A1530">©</text>
+    <text x="100" y="122" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="56" fill="#000028">©</text>
     <text x="100" y="180" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="13" fill="${C.ink}">AI made it</text>
     <path d="M 165 105 L 220 105" stroke="${C.accent}" stroke-width="2"/>
     <polygon points="220,105 210,98 210,112" fill="${C.accent}"/>
     <g transform="translate(300, 105)">
       <rect x="-60" y="-50" width="120" height="100" rx="8" fill="${C.card}" stroke="${C.border}" stroke-width="2"/>
-      <text x="0" y="-20" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="${C.soft}" letter-spacing="1.5">U.S. COPYRIGHT</text>
-      <text x="0" y="-5" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="${C.soft}" letter-spacing="1.5">OFFICE</text>
+      <text x="0" y="-20" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="700" fill="${C.soft}" letter-spacing="1.5">U.S. COPYRIGHT</text>
+      <text x="0" y="-5" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="700" fill="${C.soft}" letter-spacing="1.5">OFFICE</text>
       <line x1="-40" y1="10" x2="40" y2="10" stroke="${C.border}" stroke-width="1"/>
       <text x="0" y="34" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="20" fill="${C.bad}">denied</text>
     </g>
   </svg>`,
 
   human: `<svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
-    <rect x="40" y="55" width="115" height="115" rx="14" fill="rgba(185, 245, 66, 0.08)" stroke="${C.accent}" stroke-width="2"/>
-    <text x="97" y="80" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="${C.accent}" letter-spacing="1.5">LOW STAKES</text>
+    <rect x="40" y="55" width="115" height="115" rx="14" fill="rgba(255, 100, 47, 0.08)" stroke="${C.accent}" stroke-width="2"/>
+    <text x="97" y="80" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="700" fill="${C.accent}" letter-spacing="1.5">LOW STAKES</text>
     <text x="97" y="125" text-anchor="middle" font-size="38">🤖</text>
     <text x="97" y="155" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="13" fill="${C.accent}">AI auto</text>
     <line x1="170" y1="112" x2="210" y2="112" stroke="${C.soft}" stroke-width="2" stroke-dasharray="5,3"/>
     <text x="190" y="105" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="11" fill="${C.soft}">vs</text>
-    <rect x="225" y="55" width="135" height="115" rx="14" fill="rgba(255, 107, 126, 0.08)" stroke="${C.bad}" stroke-width="2"/>
-    <text x="292" y="80" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="${C.bad}" letter-spacing="1.5">HIGH STAKES</text>
+    <rect x="225" y="55" width="135" height="115" rx="14" fill="rgba(229, 72, 77, 0.06)" stroke="${C.bad}" stroke-width="2"/>
+    <text x="292" y="80" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="700" fill="${C.bad}" letter-spacing="1.5">HIGH STAKES</text>
     <text x="292" y="128" text-anchor="middle" font-size="38">👤</text>
     <text x="292" y="155" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="13" fill="${C.bad}">Human decides</text>
   </svg>`,
 
   thinking: `<svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg">
-    <rect x="60" y="40" width="280" height="55" rx="10" fill="rgba(185, 245, 66, 0.08)" stroke="${C.accent}" stroke-width="2"/>
-    <text x="200" y="60" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="10" font-weight="700" fill="${C.accent}" letter-spacing="1.5">YOU ASK:</text>
+    <rect x="60" y="40" width="280" height="55" rx="10" fill="rgba(255, 100, 47, 0.08)" stroke="${C.accent}" stroke-width="2"/>
+    <text x="200" y="60" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="700" fill="${C.accent}" letter-spacing="1.5">YOU ASK:</text>
     <text x="200" y="82" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="16" fill="${C.ink}">"Is my idea good?"</text>
     <path d="M 200 100 L 200 130" stroke="${C.accent}" stroke-width="2"/>
     <polygon points="200,130 192,120 208,120" fill="${C.accent}"/>
-    <rect x="60" y="135" width="280" height="55" rx="10" fill="rgba(255, 107, 126, 0.08)" stroke="${C.bad}" stroke-width="2"/>
-    <text x="200" y="156" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="10" font-weight="700" fill="${C.bad}" letter-spacing="1.5">AI ALWAYS SAYS:</text>
+    <rect x="60" y="135" width="280" height="55" rx="10" fill="rgba(229, 72, 77, 0.06)" stroke="${C.bad}" stroke-width="2"/>
+    <text x="200" y="156" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="700" fill="${C.bad}" letter-spacing="1.5">AI ALWAYS SAYS:</text>
     <text x="200" y="178" text-anchor="middle" font-family="Instrument Serif, serif" font-style="italic" font-size="16" fill="${C.ink}">"Yes! Great idea!"</text>
   </svg>`
 };
